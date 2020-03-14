@@ -65,7 +65,7 @@ class Camera extends React.Component {
   checkUser = () => {
     axios({
       method: "get",
-      url: "http://127.0.0.1:8080/api/check_user",
+      url: "http://35.221.178.140/api/add_user",
       params: {
         name: this.state.name
       },
@@ -89,7 +89,7 @@ class Camera extends React.Component {
     console.log(bodyFormData);
     axios({
       method: "post",
-      url: "http://127.0.0.1:8080/api/add_user",
+      url: "http://35.221.178.140/api/add_image",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" }
     })
@@ -110,7 +110,7 @@ class Camera extends React.Component {
     console.log(bodyFormData);
     axios({
       method: "post",
-      url: "http://127.0.0.1:8080/api/recognition",
+      url: "http://35.221.178.140/api/recognition",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" }
     })
@@ -142,7 +142,7 @@ class Camera extends React.Component {
     // console.log(bodyFormData);
     axios({
       method: "get",
-      url: "http://127.0.0.1:8080/api/train",
+      url: "http://35.221.178.140/api/train",
       params: {
         name: this.state.name
       },
@@ -175,7 +175,7 @@ class Camera extends React.Component {
           });
 
         console.log(this.state.blolbImage);
-      }, 2000);
+      }, 3000);
   };
   stopRecog = () => {
     clearInterval(this.timer);
