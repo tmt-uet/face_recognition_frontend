@@ -12,7 +12,7 @@ class Camera extends React.Component {
       // srcImages: [],
       // blobArray: [],
       // blolbImage: "",
-      name: "tung"
+      name: ""
     };
   }
   setRef = (webcam) => {
@@ -67,7 +67,8 @@ class Camera extends React.Component {
       method: "get",
       url: "http://35.221.178.140/api/add_user",
       params: {
-        name: this.state.name
+        name: this.state.name,
+        class: "1"
       },
 
       headers: { "Content-Type": "multipart/form-data" }
@@ -86,6 +87,7 @@ class Camera extends React.Component {
     var bodyFormData = new FormData();
     bodyFormData.append("name", this.state.name);
     bodyFormData.append("img", blob);
+    bodyFormData.append("class", "1");
     console.log(bodyFormData);
     axios({
       method: "post",
@@ -107,6 +109,7 @@ class Camera extends React.Component {
     var bodyFormData = new FormData();
     bodyFormData.append("name", this.state.name);
     bodyFormData.append("img", blob);
+    bodyFormData.append("class", "1");
     console.log(bodyFormData);
     axios({
       method: "post",
@@ -124,6 +127,7 @@ class Camera extends React.Component {
         // }
 
         console.log(response);
+        console.log(response["message"]);
         // console.log(response["data"]["message"]["name"]);
 
         // response = JSON.stringify(response);
@@ -144,7 +148,8 @@ class Camera extends React.Component {
       method: "get",
       url: "http://35.221.178.140/api/train",
       params: {
-        name: this.state.name
+        name: this.state.name,
+        class: "1"
       },
 
       headers: { "Content-Type": "multipart/form-data" }
